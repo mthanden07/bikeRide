@@ -1,28 +1,39 @@
 package bicycles;
 
+import bicycles.models.BikeType;
+import bicycles.models.MountainBike;
+import bicycles.models.RoadBike;
+import bicycles.models.TandemBike;
+
 public class main {
 
-    public static void main(String[] args) {
-/*
-        BicycleBase bicycle = new MountainBike();
-      //  BicycleBase bicycle = new RoadBike();
-      BikeRide bikeRide = new BikeRideThree(bicycle);
-      bikeRide.ride(bicycle);
-
-        System.out.println(bicycle.currentSpeed());
-
-*/
-  BicycleSpecification zama = new BicycleSpecification(4,2) ;
 
 
+             public static void main(String[] args) {
 
 
+              //   BikeType.MountainBik
+                 //   e= new RoadBike();      // an instance of its own...direct.
 
-/*
-       bicycle.accelerate();
-       bicycle.brake();
-       bicycle.brake();
-*/
+             //    Bicycle bicycle = new MountainBike();    // an instance of our Bicycle interface via our abstract base class.
+
+              //   BicycleBase bicycleBase = new RoadBike(); // an instance through extension and implements interface.
+
+                FunRide funRide = new FunRide(5);
+                funRide.accept(new MountainBike());
+                 funRide.accept(new MountainBike());
+                 funRide.accept(new MountainBike());
+                 funRide.accept(new RoadBike());
+                 funRide.accept(new TandemBike());
+                 funRide.getCountForType(BikeType.MountainBike);
+                 System.out.println(funRide.list);
+
     }
+    
+    
+    
+
+
+
 
 }

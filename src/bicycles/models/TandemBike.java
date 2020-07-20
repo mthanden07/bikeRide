@@ -9,4 +9,12 @@ public class TandemBike extends BicycleBase {
     public void brake() {
         changeSpeed(-7);
     }
+
+    @Override
+    public void getBicycleType() {
+        //return BikeType.TandemBike;
+    }
+
+
 }
+

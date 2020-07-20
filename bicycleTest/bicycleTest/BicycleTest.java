@@ -1,15 +1,119 @@
 package bicycleTest;
-import bicycles.Bicycle;
-import bicycles.BicycleFromSpec;
-import bicycles.BikeRide;
-import bicycles.BikeRideThree;
-import bicycles.models.BicycleBase;
+
+
+import bicycles.*;
+import bicycles.models.BikeType;
+import bicycles.models.MountainBike;
 import bicycles.models.RoadBike;
 import bicycles.models.TandemBike;
 import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class BicycleTest {
+
+  //  private boolean list;
+
+
+    @Test
+    public void shouldGetCount(){
+
+        FunRide funRide = new FunRide(3);
+        funRide.accept(new MountainBike());
+        funRide.accept(new MountainBike());
+      //  funRide.accept(new RoadBike());
+
+      //  funRide.getCountForEntered();
+
+        assertEquals(2,funRide.getCountForEntered());
+
+
+    }
+@Test
+public void shouldNotAllowMoreThanTheConstructor(){
+
+       FunRide funRide = new FunRide(4);
+       funRide.accept(new MountainBike());
+    funRide.accept(new MountainBike());
+    funRide.accept(new MountainBike());
+    funRide.accept(new MountainBike());
+    funRide.accept(new MountainBike());
+    funRide.accept(new MountainBike());
+
+    assertEquals(6,funRide.getCountForEntered());
+
+
+}
+
+
+    @Test
+
+    public void shouldAddBicycle(){
+
+        FunRide funRide = new FunRide(3);
+       Bicycle MountainBike = new MountainBike();
+     //  BikeType MountainBike = bicycles.models.MountainBike;
+
+//BikeType MountainBike ;
+        BicycleSpecification bicycleSpecification = new BicycleSpecification(BikeType.MountainBike,5,3);
+        BicycleFromSpec bicycleFromSpec = new BicycleFromSpec(bicycleSpecification);
+
+
+        //BikeType
+
+        //*************// make bicycles using the above bicycleSpecifications.
+        //************// add bicycles with bike Types.
+
+
+     //  BikeType mountainBike  = BikeType.MountainBike
+        //
+        funRide.accept(bicycleFromSpec);
+          funRide.accept(new MountainBike());
+        funRide.accept(new TandemBike());
+      funRide.getCountForType(BikeType.MountainBike);
+
+        System.out.println(funRide.list);
+
+        assertEquals(1,funRide.getCountForType(BikeType.MountainBike) );
+
+    }
+
+    @Test
+
+    public void shouldLoopThroughEnum(){
+
+        BikeType bikeType;
+try{
+    int num = 5;
+
+
+}catch (Exception e){
+
+
+    System.out.println(e);
+
+}
+
+
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*
     @Test
     public void mountAccellerate() {
@@ -119,13 +223,14 @@ class BicycleTest {
     @Test
     public void shouldMultipleAccelerate() {
 
+
         Bicycle bicycle = new RoadBike();
         bicycle.accelerate();
         bicycle.accelerate();
         bicycle.accelerate();
         bicycle.accelerate();
 
-        assertEquals(20, bicycle.currentSpeed());
+        assertEquals(2, bicycle.currentSpeed());
     }
 
     @Test
@@ -177,16 +282,17 @@ class BicycleTest {
         bikeRide.ride(bicycle);
         assertEquals(34,bicycle.currentSpeed());
     }
-
+/*
     @Test
     public void BicycleFromSpec(){
-      BicycleSpecificattion mountainBike = new BicycleSpecification(7,4);
+      BicycleSpecification bicycleSpecification = new BicycleSpecification(7,4, BicycleSpecification.BicycleType.RoadBike);
 
-
-        BicycleBase bicycle = new BicycleFromSpec();
+        BicycleFromSpec bicycleFromSpec = new BicycleFromSpec(bicycleSpecification);
+        BikeRide bikeRide = new BikeRideOne(bicycleFromSpec);
+        bikeRide.ride(bicycleFromSpec);
 
 
     }
 
-
+ */
 }

@@ -1,13 +1,26 @@
 package bicycles;
 
-class BicycleSpecification {
+import bicycles.models.BikeType;
+
+public class
+
+BicycleSpecification {
     private int accelerationSpeed;
     private int brakeSpeed;
 
+  // public enum BicycleType {RoadBike,MountainBike,Tandem}
 
-    BicycleSpecification(int accelerationSpeed, int brakeSpeed) {
+
+
+
+        private BikeType bicycleType;
+
+
+  public  BicycleSpecification(BikeType bicycleType, int accelerationSpeed, int brakeSpeed  ) {
         this.accelerationSpeed = accelerationSpeed;
         this.brakeSpeed = brakeSpeed;
+        this.bicycleType = bicycleType;
+
 
     }
 
@@ -18,4 +31,8 @@ class BicycleSpecification {
     public int getBrakeSpeed() {
         return brakeSpeed;
     }
+
+    public Enum<BikeType> getBicycleType(){return bicycleType; }
 }
+
+

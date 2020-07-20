@@ -1,5 +1,6 @@
 package bicycles;
-public class BikeRideOne implements BikeRide{
+public class
+BikeRideOne implements BikeRide{
 
    // private int speed = this.speed;
 

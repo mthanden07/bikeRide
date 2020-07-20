@@ -2,7 +2,7 @@ package bicycles.models;
 import bicycles.Bicycle;
 
 public abstract class BicycleBase implements Bicycle {
-    public int speed = 0;
+    protected int speed = 0;
 
 
     protected void changeSpeed(int changeSpeed) {
@@ -16,6 +16,8 @@ public abstract class BicycleBase implements Bicycle {
     public int stop() {
         return this.speed = 0;
     }
+    public BikeType getBicycleType(){
 
 
+    }
 }

@@ -12,5 +12,12 @@ public class RoadBike extends BicycleBase {
     public void brake() {
         changeSpeed(-4);
     }
-}
+
+    @Override
+    public void getBicycleType() {
+     //   return BikeType.RoadBike;
+    }
+
+    }
+
 

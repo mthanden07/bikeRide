@@ -11,9 +11,11 @@ public class MountainBike extends BicycleBase {
     public void brake() {
         changeSpeed(-3);
     }
-  //  public int currentSpeed(){ return this.speed; }
-  //  public int stop(){ return this.speed =0;}
-  //  public int getSpeed(){return this.speed;}
+
+    @Override
+    public void getBicycleType() {
+        //return BikeType.MountainBike;
+    }
 
 }
 

@@ -9,12 +9,15 @@ public class BicycleFromSpec extends BicycleBase{
 
 
 
-    BicycleFromSpec(BicycleSpecification bicycleSpecification){
+
+
+    public BicycleFromSpec(BicycleSpecification bicycleSpecification){
 
         this.bicycleSpecification = bicycleSpecification;
     }
-    @Override
-   // int speed = 0;
+//    @Override
+
+        //    int speed = 0;
     public void accelerate(){
         this.changeSpeed(bicycleSpecification.getAccelerationSpeed());
     }
@@ -24,4 +27,7 @@ public class BicycleFromSpec extends BicycleBase{
     public void brake() {
         this.changeSpeed(bicycleSpecification.getBrakeSpeed());
     }
+
+     public void getBicycleType(){this.bicycleSpecification.getBicycleType();}
+
 }

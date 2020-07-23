@@ -26,6 +26,7 @@ public class main {
                  funRide.accept(new RoadBike());
                  funRide.accept(new TandemBike());
                  funRide.getCountForType(BikeType.MountainBike);
+
                  System.out.println(funRide.list);
 
     }

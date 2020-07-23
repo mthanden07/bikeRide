@@ -14,10 +14,10 @@ public class RoadBike extends BicycleBase {
     }
 
     @Override
-    public void getBicycleType() {
-     //   return BikeType.RoadBike;
+    public BikeType getBicycleType() {
+        return BikeType.RoadBike;
     }
 
-    }
+}
 
 

@@ -16,8 +16,5 @@ public abstract class BicycleBase implements Bicycle {
     public int stop() {
         return this.speed = 0;
     }
-    public BikeType getBicycleType(){
-
-
-    }
+    public abstract BikeType getBicycleType();
 }

@@ -12,92 +12,100 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class BicycleTest {
 
-  //  private boolean list;
+    //  private boolean list;
 
 
     @Test
-    public void shouldGetCount(){
+    public void shouldGetCount() {
 
         FunRide funRide = new FunRide(3);
         funRide.accept(new MountainBike());
         funRide.accept(new MountainBike());
-      //  funRide.accept(new RoadBike());
+        //  funRide.accept(new RoadBike());
 
-      //  funRide.getCountForEntered();
+        //  funRide.getCountForEntered();
 
-        assertEquals(2,funRide.getCountForEntered());
+        assertEquals(2, funRide.getCountForEntered());
 
 
     }
-@Test
-public void shouldNotAllowMoreThanTheConstructor(){
 
-       FunRide funRide = new FunRide(4);
-       funRide.accept(new MountainBike());
-    funRide.accept(new MountainBike());
-    funRide.accept(new MountainBike());
-    funRide.accept(new MountainBike());
-    funRide.accept(new MountainBike());
-    funRide.accept(new MountainBike());
+    @Test
+    public void shouldNotAllowMoreThanTheConstructor() {
 
-    assertEquals(6,funRide.getCountForEntered());
+        FunRide funRide = new FunRide(4);
+        funRide.accept(new MountainBike());
+        funRide.accept(new MountainBike());
+        funRide.accept(new MountainBike());
+        funRide.accept(new MountainBike());
+        funRide.accept(new MountainBike());
+        funRide.accept(new MountainBike());
+
+        assertEquals(6, funRide.getCountForEntered());
 
 
-}
+    }
 
 
     @Test
 
-    public void shouldAddBicycle(){
+    public void funRideAddBicycleAndGetCount() {
 
         FunRide funRide = new FunRide(3);
-       Bicycle MountainBike = new MountainBike();
-     //  BikeType MountainBike = bicycles.models.MountainBike;
 
-//BikeType MountainBike ;
-        BicycleSpecification bicycleSpecification = new BicycleSpecification(BikeType.MountainBike,5,3);
-        BicycleFromSpec bicycleFromSpec = new BicycleFromSpec(bicycleSpecification);
+        BicycleSpecification bicycleSpecification = new BicycleSpecification(BikeType.MountainBike, 5, 3);
+        BicycleFromSpec bicycleFromSpec = new BicycleFromSpec(new BicycleSpecification(BikeType.MountainBike,12,10));
 
-
-        //BikeType
-
-        //*************// make bicycles using the above bicycleSpecifications.
-        //************// add bicycles with bike Types.
-
-
-     //  BikeType mountainBike  = BikeType.MountainBike
-        //
         funRide.accept(bicycleFromSpec);
-          funRide.accept(new MountainBike());
+        funRide.accept(new MountainBike());
         funRide.accept(new TandemBike());
-      funRide.getCountForType(BikeType.MountainBike);
+       // funRide.getCountForType(BikeType.MountainBike);
+        funRide.getCountForEntered();
 
-        System.out.println(funRide.list);
+       // System.out.println(funRide.list);
 
-        assertEquals(1,funRide.getCountForType(BikeType.MountainBike) );
+        assertEquals(3, funRide.getCountForEntered());
 
     }
 
     @Test
 
-    public void shouldLoopThroughEnum(){
+    public void shouldLoopThroughEnum() {
 
         BikeType bikeType;
-try{
-    int num = 5;
+        try {
+            int num = 5;
 
 
-}catch (Exception e){
+        } catch (Exception e) {
 
 
-    System.out.println(e);
+            System.out.println(e);
 
-}
+        }
+    }
 
+    @Test
+    public void shouldReturnCountforType() {
 
+        FunRide funRide = new FunRide(4);
+        funRide.accept(new MountainBike());
+        funRide.accept(new RoadBike());
+        funRide.accept(new MountainBike());
+        funRide.accept(new TandemBike());
+
+       // funRide.getCountForEntered();
+
+       // System.out.println( funRide.getCountForType(BikeType.MountainBike));
+        assertEquals(3, funRide.getCountForType(BikeType.MountainBike));
 
 
     }
+
+
+
+
+
 
 
 

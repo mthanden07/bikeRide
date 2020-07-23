@@ -13,7 +13,7 @@ public class FunRide {
     int countForTandem = 0;
     int max = 0;
     int countBike = 0;
-
+    BikeType bikeType;
 
     // private enum BicycleType {RoadBike,MountainBike,Tandem}
     private BicycleSpecification bicycleSpecification;
@@ -40,26 +40,22 @@ public class FunRide {
         return bicycleCount;
     }
 
+
     public int getCountForType(BikeType bikeType) {
-        //take an enum as a parameter.
-        // loop through the list to check the bicycle type.
-        // start counting the types.
-        // enhanced.
 
-//String bikeT
-     //   BikeType = BikeType;
+      //  this.bikeType = bikeType;
 
-
-
+       int countSum = 0;
 
 
         for (Bicycle bicycle : list) {
-
-
-            if (bicycle.getBicycleType()) {
-                countBike++;
+            if (bicycle.getBicycleType().equals(bikeType)) {
+                countSum++;
             }
+
         }
-        return countBike;
+        return countSum;
+         }
+
     }
-}
+

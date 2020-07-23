@@ -11,8 +11,8 @@ public class TandemBike extends BicycleBase {
     }
 
     @Override
-    public void getBicycleType() {
-        //return BikeType.TandemBike;
+    public BikeType getBicycleType() {
+        return BikeType.TandemBike;
     }
 
 
